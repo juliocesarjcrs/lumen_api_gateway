@@ -1,7 +1,7 @@
 version: "3.3"
 services:
-  backend:
-    container_name: lumenen_authors
+  lumenen_api_gateway:
+    container_name: lumenen_api_gateway
     build:
       context: .
       dockerfile: Dockerfile
@@ -14,7 +14,7 @@ services:
       XDEBUG_CONFIG: remote_host=host.docker.internal xdebug.mode=debug xdebug.start_with_request = yes xdebug.client_port = 9000 remote_enable=1
       
     ports:
-      - 8000:80 # con el 80 es cuando es v -host
+      - 8003:80 # con el 80 es cuando es v -host
     volumes:
       - .:/var/www/html
       - /var/www/html/vendor
